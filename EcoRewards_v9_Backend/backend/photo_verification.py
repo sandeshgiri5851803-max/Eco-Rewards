@@ -43,7 +43,7 @@ def crop_hashes(im):
 def distance(a,b):
     """Hamming distance (number of differing bits) between 64-bit hashes."""
     if not a or not b or len(a)!=16 or len(b)!=16: return 64
-    try:return (int(a,16)^int(b,16)).bit_count()
+    try:return bin(int(a,16)^int(b,16)).bit_count("1")
     except ValueError:return 64
 
 
